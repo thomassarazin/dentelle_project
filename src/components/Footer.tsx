@@ -2,6 +2,7 @@
 
 import { TransitionLink } from "@/components/transitions";
 import dynamic from "next/dynamic";
+import { Geist_Mono } from "next/font/google";
 
 const ContactMap = dynamic(() => import("@/components/contact/ContactMap"), { ssr: false });
 
@@ -12,6 +13,9 @@ const navLinks = [
     { label: "FAQ", href: "/#faq-section" },
     { label: "Contact", href: "/contact" },
 ];
+
+// Même signature que sur Camille-et-Leo : Geist Mono minuscule, une seule graisse.
+const geistMono = Geist_Mono({ subsets: ["latin"], weight: ["400"], display: "swap" });
 
 const GOOGLE_MAPS_URL =
     "https://www.google.com/maps/dir/?api=1&destination=16+rue+Georges+Guynemer,+59600+Assevent,+France";
@@ -111,12 +115,20 @@ export default function Footer({ hideSeparator = false }: { hideSeparator?: bool
                     <p className="font-satoshi text-sm text-white/80">
                         © {year} Les Fuseaux Asseventois. Tous droits réservés.
                     </p>
-                    <p className="font-satoshi text-sm text-white/75">
-                        Fait avec amour par{" "}
-                        <a href="https://www.bigxbang.studio/" target="_blank" rel="noopener noreferrer" className="font-['Clash_Display'] font-medium tracking-normal hover:text-white transition-colors">
-                            Big<span className="text-[0.75em]">x</span>Bang Studio
-                        </a>
-                    </p>
+                    <a
+                        href="https://nualt.fr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Site de nualt, qui a conçu ce site"
+                        className={`${geistMono.className} inline-flex shrink-0 translate-y-px items-center gap-[0.5em] text-[13px] lowercase text-white transition-opacity hover:opacity-70 md:translate-y-0.5 md:text-[16px]`}
+                    >
+                        <span>fait avec amour par</span>
+                        {/* Tailles en em, calées sur Geist Mono (hauteur d'x 0,53 em) : le « nu »
+                           occupe 56 % du SVG, donc 0,94 em le met à la hauteur des minuscules,
+                           et 0,06 em pose sa ligne de base sur celle du texte. */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/nualt.svg" alt="" loading="lazy" className="h-[0.94em] w-auto translate-y-[0.06em]" />
+                    </a>
                 </div>
             </div>
         </footer>

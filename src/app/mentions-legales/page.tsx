@@ -174,7 +174,7 @@ export default function MentionsLegales() {
                     </h2>
                     <div className="font-satoshi text-lg text-[#5C3D26] space-y-8 leading-relaxed">
                         <p>
-                            <strong>Design, Animations & Développement :</strong> Thomas Sarazin (SIRET 992 780 635 00010) — <a href="https://www.bigxbang.studio/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#2C1A0E] transition-colors">BigxBang Studio</a>.
+                            <strong>Design, Animations & Développement :</strong> Thomas Sarazin, entrepreneur individuel (SIRET 992 780 635 00015) — <a href="https://nualt.fr" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#2C1A0E] transition-colors">Nualt</a>.
                         </p>
                         <div>
                             <h3 className="font-semibold text-[#2C1A0E] mb-2">Ressources graphiques :</h3>
